@@ -62,7 +62,7 @@ def get_product_info(product_container) -> Dict[str, List[str]]:
     ).text
 
     sizes = product_container.find_elements(By.CLASS_NAME, "jsx-706577070.square")
-    size_list = [size.text for size in sizes if size.isdigit()]
+    size_list = [size.text for size in sizes if size.text.isdigit()]
 
     product_info = {"title": title, "price": price, "size_list": size_list}
 
